@@ -1,7 +1,6 @@
 // Victims
-// var victims = 0;
+
 var victimsArray = [];
-var victimInfo = [];
 var victim = {};
     
 // var victims = prompt("How many disaster victims do you have?");
@@ -10,7 +9,6 @@ var getVictim = function() {
     var enterVictim = confirm("Would you like to add a victim's information?")
     
     if (enterVictim) {
-        // victims += 1;
         // for (var i=0; i<victims; i++) {
             var gatherVictimInfo = function() {
                 var victimName = prompt("Enter the vicitm's name:");
@@ -29,10 +27,10 @@ var getVictim = function() {
     }
 }
 getVictim();
+
 // Volunteers
-// var volunteers = 0;
+
 var volunteersArray = [];
-var volunteerInfo = [];
 var volunteer = {};
 
 // var volunteers = prompt("How many disaster volunteers do you have?");
