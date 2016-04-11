@@ -1,27 +1,28 @@
 // Victims
-
-var victims = prompt("How many disaster victims do you have?");
+var victims = 0;
+var enterVictim = confirm("Would you like to add a victim's information?")
+// var victims = prompt("How many disaster victims do you have?");
 
 var victimsArray = [];
 var victimInfo = [];
 var victim = {};
-
-for (var i=0; i<victims; i++) {
-    var gatherVictimInfo = function() {
-        var victimName = prompt("Enter the vicitm's name:");
-        var victimPhone = prompt("Enter the vicitm's phone number:");
-        var victimStreet = prompt("Enter the vicitm's street:");
-        var victim = {
-            name : victimName,
-            phone : victimPhone,
-            street : victimStreet
+if (enterVictim) {
+    victims += 1;
+    for (var i=0; i<victims; i++) {
+        var gatherVictimInfo = function() {
+            var victimName = prompt("Enter the vicitm's name:");
+            var victimPhone = prompt("Enter the vicitm's phone number:");
+            var victimStreet = prompt("Enter the vicitm's street:");
+            var victim = {
+                name : victimName,
+                phone : victimPhone,
+                street : victimStreet
+            }
+            victimsArray.push(victim);
         }
-        victimsArray.push(victim);
+        gatherVictimInfo();
     }
-    gatherVictimInfo();
 }
-console.log(victimsArray);
-
 // Volunteers
 
 var volunteers = prompt("How many disaster volunteers do you have?");
@@ -44,4 +45,21 @@ for (var i=0; i<volunteers; i++) {
     }
     gathervolunteerInfo();
 }
-console.log(volunteersArray);
+var victimNames = [];
+
+var showVictimNames = function() {
+    for (var i =0; i<victimsArray.length; i++) {
+        victimNames.push(victimsArray[i].name);
+    }
+    return victimNames.join(',' + ' ');
+}
+
+var volunteerNames = [];
+
+var showVolunteerNames = function() {
+    for (var i =0; i<volunteersArray.length; i++) {
+        volunteerNames.push(volunteersArray[i].name);
+    }
+    return volunteerNames.join(',' + ' ');
+}
+alert("There are " + victimsArray.length + " vitcims in need. \n There are " + volunteersArray.length + " volunteers available.  \n Victims: " + showVictimNames() + "\n Volunteers: " + showVolunteerNames() );
